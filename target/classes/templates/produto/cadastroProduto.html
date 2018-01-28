@@ -1,6 +1,20 @@
 <!DOCTYPE html>
-<html xmlns="https://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
 	<body>
-		<h1> Ol� Funciona Thymeleaf</h1>	
+		<h1>Olá Funciona Thymeleaf</h1>
+	
+		<form method="POST">
+			<span th:text="${mensagem}"></span>	<br/>	
+			<label for="nome">Nome:</label> 
+			<input id="nome" type="text" name="nome"> <br />
+			
+			<label for="descricao">Descrição:</label> 
+			<input id="descricao" type="text" name="descricao"> <br />
+			
+			<input type="submit" value="Salvar">
+			
+			
+		</form>
 	</body>
 </html>
