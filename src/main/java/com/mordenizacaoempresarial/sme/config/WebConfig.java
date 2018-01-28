@@ -19,7 +19,7 @@ import org.thymeleaf.templateresolver.ITemplateResolver;
 import com.mordenizacaoempresarial.sme.controller.ProdutosController;
 
 @Configuration
-@ComponentScan(basePackageClasses = { ProdutosController.class } ) // PROCURA TODAS AS CLASSES DENTO DO PACOTE DO PRODUTOCONTROLLER
+@ComponentScan(basePackageClasses = { ProdutosController.class } )
 @EnableWebMvc
 public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
 	
