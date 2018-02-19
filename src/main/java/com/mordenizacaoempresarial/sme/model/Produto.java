@@ -6,10 +6,10 @@ import org.hibernate.validator.constraints.NotBlank;
 
 public class Produto {
 	
-	@NotBlank
+	@NotBlank(message="O campo Nome é obrigatório")
 	private String nome;
 	
-	@Size(min=1, max=50)
+	@Size(min=1, max=50, message="O campo Descrição deve estar entre 1 e 50 caracteres")
 	private String descricao;
 	
 	public String getNome() {
