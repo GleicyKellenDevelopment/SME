@@ -4,13 +4,19 @@
 	<body>
 		<h1>Olá Funciona Thymeleaf</h1>
 	
-		<form method="POST">
+		<form method="POST" th:object="${produto}">
+			<span th:text="${#fields.hasAnyErrors()}"></span>
+			
+			<div th:each="erro: ${#fields.detailedErrors()}">
+				<span th:text="${erro.message}"></span>
+			</div>
+			
 			<span th:text="${mensagem}"></span>	<br/>	
 			<label for="nome">Nome:</label> 
-			<input id="nome" type="text" name="nome"> <br />
+			<input id="nome" type="text" th:field="*{nome}"> <br />
 			
 			<label for="descricao">Descrição:</label> 
-			<input id="descricao" type="text" name="descricao"> <br />
+			<input id="descricao" type="text" th:field="*{descricao}"> <br />
 			
 			<input type="submit" value="Salvar">
 			

@@ -15,16 +15,14 @@ import com.mordenizacaoempresarial.sme.model.Produto;
 public class ProdutosController {
 	
 	@RequestMapping("/produtos/novo")
-	public String novo() {
+	public String novo(Produto produto) {
 		return "produto/cadastroProduto";
 	}
 	
 	@PostMapping(value="/produtos/novo")
 	private String cadastrarProduto(@Valid Produto produto, BindingResult result, Model model, RedirectAttributes redirectAttributes) {
 		if (result.hasErrors()) {
-			model.addAttribute("mensagem", "Erro no Formulário");
-			System.out.println(">>>> TEM ERRO");
-			return "produto/cadastroProduto";
+			return novo(produto);
 		}
 		
 		redirectAttributes.addFlashAttribute("mensagem", "Produto Salvo com Sucesso.");
