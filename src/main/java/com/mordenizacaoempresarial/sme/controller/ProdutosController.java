@@ -30,4 +30,9 @@ public class ProdutosController {
 		System.out.println(">>>> DESCRIÇÃO: " + produto.getDescricao());
 		return "redirect:/produtos/novo";
 	}
+	
+	@RequestMapping("/produtos/cadastro")
+	public String cadastro() {
+		return "produto/cadastro-produto";
+	}
 }
